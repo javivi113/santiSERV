@@ -17,9 +17,9 @@ public class Alumno
 }
 class Program
 {
-     public struct Alumnos
+     public struct AlumnosEstruc
      {
-         public String Nombre;
+         public String Nombre; 
          public char Sexo;
          public decimal Nota;
      }
@@ -129,20 +129,21 @@ class Program
         /////////////////////////////////////////////////////////////////////////////
         Console.WriteLine("--------------------------------------------------------");
         /////////////////////////////////////////////////////////////////////////////
-        /*(String,Char,decimal) A1=("Luis",'H',7.5M);
+        Console.WriteLine("Tuplas");
+        (String,Char,decimal) A1=("Luis",'H',7.5M);
         (String,Char,decimal) A2=("Mara",'M',4M);
         (String,Char,decimal) A3=("Marcos",'H',6M);
         (String,Char,decimal) A4=("Aroa",'M',5M);
         (String,Char,decimal) A5=("Nerea",'M',4M);
         (String,Char,decimal) A6=("Kike",'H',6.5M);
         (String,Char,decimal) A7=("Juan",'H',7M);
-        var alumnos = new[] { A1, A2, A3, A4, A5, A6, A7};
+        var alumnosT = new[] { A1, A2, A3, A4, A5, A6, A7};
         //Console.WriteLine("El alumno " + A1.Item1+ " es " + A1.Item2 + " y la media es de " + A1.Item3);
         decimal media=0;
-        for (int i = 0; i < alumnos.Length; i++){
-            media+=alumnos[i].Item3;
+        for (int i = 0; i < alumnosT.Length; i++){
+            media+=alumnosT[i].Item3;
         }
-        Console.WriteLine("La media de los " + alumnos.Length + " es de " + media/alumnos.Length);*/
+        Console.WriteLine("La media de los " + alumnosT.Length + " es de " + media/alumnosT.Length);
         /////////////////////////////////////////////////////////////////////////////
         Console.WriteLine("--------------------------------------------------------");
         /////////////////////////////////////////////////////////////////////////////
@@ -178,25 +179,26 @@ class Program
         ----------------------------------------------------------------------------------------
         */
         Console.WriteLine("Estructura");
-        Alumnos A1s; A1s.Nombre = "Luis"; A1s.Sexo = 'H'; A1s.Nota = 7.5M;
-        Alumnos A2s; A2s.Nombre = "Marta"; A2s.Sexo = 'M'; A2s.Nota = 4M;
-        Alumnos A3s; A3s.Nombre = "Marcos"; A3s.Sexo = 'H'; A3s.Nota = 6M;
-        Alumnos A4s; A4s.Nombre = "Aroa"; A4s.Sexo = 'M'; A4s.Nota = 5M;
-        Alumnos A5s; A5s.Nombre = "Nerea"; A5s.Sexo = 'M'; A5s.Nota = 4M;
-        Alumnos A6s; A6s.Nombre = "Kike"; A6s.Sexo = 'H'; A6s.Nota = 6.5M;
-        Alumnos A7s; A7s.Nombre = "Juan"; A7s.Sexo = 'H'; A7s.Nota = 7.5M;
-        var alumnos = new[] { A1s, A2s, A3s, A4s, A5s, A6s, A7s };
+        AlumnosEstruc A1s; A1s.Nombre = "Luis"; A1s.Sexo = 'H'; A1s.Nota = 7.5M;
+        AlumnosEstruc A2s; A2s.Nombre = "Marta"; A2s.Sexo = 'M'; A2s.Nota = 4M;
+        AlumnosEstruc A3s; A3s.Nombre = "Marcos"; A3s.Sexo = 'H'; A3s.Nota = 6M;
+        AlumnosEstruc A4s; A4s.Nombre = "Aroa"; A4s.Sexo = 'M'; A4s.Nota = 5M;
+        AlumnosEstruc A5s; A5s.Nombre = "Nerea"; A5s.Sexo = 'M'; A5s.Nota = 4M;
+        AlumnosEstruc A6s; A6s.Nombre = "Kike"; A6s.Sexo = 'H'; A6s.Nota = 6.5M;
+        AlumnosEstruc A7s; A7s.Nombre = "Juan"; A7s.Sexo = 'H'; A7s.Nota = 7.5M;
+        var alumnosS = new[] { A1s, A2s, A3s, A4s, A5s, A6s, A7s };
         decimal mediaS=0;
-        for (int i = 0; i < alumnos.Length; i++)
+        for (int i = 0; i < alumnosS.Length; i++)
         {
-            mediaS+=alumnos[i].Nota;
+            mediaS+=alumnosS[i].Nota;
         }
-        Console.WriteLine("La media de la clase es de " +mediaS/alumnos.Length);
+        Console.WriteLine("La media de la clase es de " +mediaS/alumnosS.Length);
         /*
         ----------------------------------------------------------------------------------------
         ----------------------------------------------------------------------------------------
         ----------------------------------------------------------------------------------------
         */
+        Console.WriteLine("--------------------------------------------------------");
         Console.WriteLine("Clases");
         Alumno A1c = new Alumno("Luis", 'H', 7.5M);
         Alumno A2c = new Alumno("Mara", 'M', 4M);
@@ -207,11 +209,11 @@ class Program
         Alumno A7c = new Alumno("Juan", 'H', 7.5M);
         var alumnosC = new[] { A1c, A2c, A3c, A4c, A5c, A6c, A7c };
         decimal mediaC=0;
-        for (int i = 0; i < alumnos.Length; i++)
+        for (int i = 0; i < alumnosC.Length; i++)
         {
             mediaC+=alumnosC[i].Nota;
         }
-        Console.WriteLine("La media de la clase es de " +mediaC/alumnos.Length);
+        Console.WriteLine("La media de la clase es de " +mediaC/alumnosC.Length);
 
     }
 }
