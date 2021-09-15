@@ -1,12 +1,29 @@
 ﻿using System;
+public class Alumno
+{
+
+    public Alumno(string name, char sexo, decimal nota)
+    {
+        Nombre = name;
+        Sexo = sexo;
+        Nota = nota;
+    }
+
+    // Auto-implemented readonly property:
+    public string Nombre { get; }
+    public char Sexo { get; }
+    public decimal Nota { get; }
+
+}
 class Program
 {
-    public struct Alumnos
-    {
-        public String Nombre;
-        public char Sexo;
-        public decimal Nota;
-    }
+     public struct Alumnos
+     {
+         public String Nombre;
+         public char Sexo;
+         public decimal Nota;
+     }
+
     public static void Main()
     {
         Console.WriteLine("Hello World!");
@@ -135,7 +152,7 @@ class Program
         {
             public static void Main()
             {
-                decimal media = 0;
+                decimal mediaT = 0;
                 Tuple<string, char, decimal>[] datos =
                 {
                     Tuple.Create("Luis", 'H',7.5M),
@@ -149,9 +166,9 @@ class Program
                 for (var i = 0; i < datos.Length; i++)
                 {
                     Console.WriteLine("Nombre: " + datos[i].Item1 + " | Genero: " + datos[i].Item2 + " | Nota: " + datos[i].Item3);
-                    media = media + datos[i].Item3;
+                    mediaT+= datos[i].Item3;
                 }
-                Console.WriteLine("La nota media de los alumnos es " + media / datos.Length);
+                Console.WriteLine("La nota media de los alumnos es " + mediaT / datos.Length);
             }
         }
         */
@@ -160,25 +177,41 @@ class Program
         ----------------------------------------------------------------------------------------
         ----------------------------------------------------------------------------------------
         */
-        /*Alumnos A1; A1.Nombre = "Luis"; A1.Sexo = 'H'; A1.Nota = 7.5M;
-        Alumnos A2; A2.Nombre = "Marta"; A2.Sexo = 'M'; A2.Nota = 4M;
-        Alumnos A3; A3.Nombre = "Marcos"; A3.Sexo = 'H'; A3.Nota = 6M;
-        Alumnos A4; A4.Nombre = "Aroa"; A4.Sexo = 'M'; A4.Nota = 5M;
-        Alumnos A5; A5.Nombre = "Nerea"; A5.Sexo = 'M'; A5.Nota = 4M;
-        Alumnos A6; A6.Nombre = "Kike"; A6.Sexo = 'H'; A6.Nota = 6.5M;
-        Alumnos A7; A7.Nombre = "Juan"; A7.Sexo = 'H'; A7.Nota = 7.5M;
-        var alumnos = new[] { A1, A2, A3, A4, A5, A6, A7 };
-        decimal media=0;
+        Console.WriteLine("Estructura");
+        Alumnos A1s; A1s.Nombre = "Luis"; A1s.Sexo = 'H'; A1s.Nota = 7.5M;
+        Alumnos A2s; A2s.Nombre = "Marta"; A2s.Sexo = 'M'; A2s.Nota = 4M;
+        Alumnos A3s; A3s.Nombre = "Marcos"; A3s.Sexo = 'H'; A3s.Nota = 6M;
+        Alumnos A4s; A4s.Nombre = "Aroa"; A4s.Sexo = 'M'; A4s.Nota = 5M;
+        Alumnos A5s; A5s.Nombre = "Nerea"; A5s.Sexo = 'M'; A5s.Nota = 4M;
+        Alumnos A6s; A6s.Nombre = "Kike"; A6s.Sexo = 'H'; A6s.Nota = 6.5M;
+        Alumnos A7s; A7s.Nombre = "Juan"; A7s.Sexo = 'H'; A7s.Nota = 7.5M;
+        var alumnos = new[] { A1s, A2s, A3s, A4s, A5s, A6s, A7s };
+        decimal mediaS=0;
         for (int i = 0; i < alumnos.Length; i++)
         {
-            media+=alumnos[i].Nota;
+            mediaS+=alumnos[i].Nota;
         }
-        Console.WriteLine("La media de la clase es de " +media/alumnos.Length);*/
+        Console.WriteLine("La media de la clase es de " +mediaS/alumnos.Length);
         /*
         ----------------------------------------------------------------------------------------
         ----------------------------------------------------------------------------------------
         ----------------------------------------------------------------------------------------
         */
+        Console.WriteLine("Clases");
+        Alumno A1c = new Alumno("Luis", 'H', 7.5M);
+        Alumno A2c = new Alumno("Mara", 'M', 4M);
+        Alumno A3c = new Alumno("Marcos", 'H', 6M);
+        Alumno A4c = new Alumno("Aroa", 'M', 5M);
+        Alumno A5c = new Alumno("Nerea", 'M', 4M);
+        Alumno A6c = new Alumno("Kike", 'H', 6.5M);
+        Alumno A7c = new Alumno("Juan", 'H', 7.5M);
+        var alumnosC = new[] { A1c, A2c, A3c, A4c, A5c, A6c, A7c };
+        decimal mediaC=0;
+        for (int i = 0; i < alumnos.Length; i++)
+        {
+            mediaC+=alumnosC[i].Nota;
+        }
+        Console.WriteLine("La media de la clase es de " +mediaC/alumnos.Length);
 
     }
 }
